@@ -61,10 +61,52 @@ public class monthgenerator {
 			}
 		}
 		
+		System.out.println("SU    MO    TU    WE    TH    FR    SA");
+		System.out.println("--------------------------------------");
+		
 		if(leap(year) && month == 2) {
-			
+			print_month(30, day);
+		}else {
+			print_month(29, day);
 		}
 		
+		switch(month) {
+		case 1:
+		case 3:
+		case 5:
+		case 7:
+		case 8:
+		case 10:
+		case 12:
+			print_month(31, day);
+		break;
+		default:
+			print_month(30, day);
+		}
+		
+	}
+	
+	public static void print_month(int total_days, int day) {
+		int week_row = 0, day_ctr = 1, week_ctr = 1;
+		
+		for(int i = 0; i<week_row; i++) {
+			while(day_ctr != total_days+day) {
+				if(day_ctr<10) {
+					System.out.print("0"+day_ctr+"    ");
+				}else {
+					System.out.print(day_ctr+"     ");
+				}
+				
+				day_ctr++;
+				week_ctr++;
+				
+				if(week_ctr == 8) {
+					week_row++;
+					break;
+				}
+			}
+			System.out.println();
+		}
 	}
 	
 	public static boolean leap(int year) {
