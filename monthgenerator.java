@@ -21,8 +21,17 @@ public class monthgenerator {
 		System.out.println("[5] MAY         [11] NOVEMBER");
 		System.out.println("[6] JUNE        [7] DECEMBER");
 		
-		System.out.print("   -Enter your choice: ");
-		int month = input.nextInt();
+		while(true){
+			System.out.print("   -Enter your choice: ");
+			int month = input.nextInt();
+			
+			if(month < 1 || month > 12) {
+				System.out.println("Option only ranges from 1 - 12");
+			}else {
+				break;
+			}
+		}
+		
 		
 		System.out.println("Select a day: ");
 		System.out.println("-----------------------------");
@@ -31,11 +40,16 @@ public class monthgenerator {
 		System.out.println("[3] TUESDAY    [7] SATURDAY");
 		System.out.println("[4] WEDNESDAY");
 		
-		System.out.print("   -Enter your choice: ");
-		int day = input.nextInt();
-		
-		
-		
+		while(true) {
+			System.out.print("   -Enter your choice: ");
+			int day = input.nextInt();
+			
+			if(day<1 || day>7) {
+				System.out.println("Option only ranges from 1 - 7");
+			}else {
+				break;
+			}
+		}
 		
 	}
 	
