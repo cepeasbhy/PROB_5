@@ -65,25 +65,24 @@ public class monthgenerator {
 		System.out.println("--------------------------------------");
 		
 		if(leap(year) && month == 2) {
-			print_month(30, day);
-		}else if (month == 2){
 			print_month(29, day);
+		}else if (month == 2){
+			print_month(28, day);
+		}else {
+			switch(month) {
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12:
+				print_month(31, day);
+			break;
+			default:
+				print_month(30, day);
+			}
 		}
-		
-		switch(month) {
-		case 1:
-		case 3:
-		case 5:
-		case 7:
-		case 8:
-		case 10:
-		case 12:
-			print_month(31, day);
-		break;
-		default:
-			print_month(30, day);
-		}
-		
 	}
 	
 	public static void print_month(int total_days, int day) {
