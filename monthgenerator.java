@@ -4,13 +4,23 @@ public class monthgenerator {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		int month = 0, day  = 0, year = 0;
 		
 		System.out.println("MONTH GENERATOR");
 		System.out.println("---------------");
 		System.out.println();
 		
-		System.out.print("Enter a year: ");
-		int year  = input.nextInt();
+		while(true) {
+			System.out.print("Enter a year: ");
+			year  = input.nextInt();
+			
+			if(year<=0) {
+				System.out.println("Not a valid year");
+			}else {
+				break;
+			}
+		}
+		
 		
 		System.out.println("Select a month: ");
 		System.out.println("-----------------------------");
@@ -23,7 +33,7 @@ public class monthgenerator {
 		
 		while(true){
 			System.out.print("   -Enter your choice: ");
-			int month = input.nextInt();
+			month = input.nextInt();
 			
 			if(month < 1 || month > 12) {
 				System.out.println("Option only ranges from 1 - 12");
@@ -42,13 +52,17 @@ public class monthgenerator {
 		
 		while(true) {
 			System.out.print("   -Enter your choice: ");
-			int day = input.nextInt();
+			day = input.nextInt();
 			
 			if(day<1 || day>7) {
 				System.out.println("Option only ranges from 1 - 7");
 			}else {
 				break;
 			}
+		}
+		
+		if(leap(year) && month == 2) {
+			
 		}
 		
 	}
