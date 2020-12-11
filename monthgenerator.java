@@ -12,8 +12,6 @@ public class monthgenerator {
 		System.out.print("Enter a year: ");
 		int year  = input.nextInt();
 		
-		boolean leap_year = leap(year);
-		
 		System.out.println("Select a month: ");
 		System.out.println("-----------------------------");
 		System.out.println("[1] JANUARY     [7] JULY");
@@ -35,6 +33,7 @@ public class monthgenerator {
 		
 		System.out.print("   -Enter your choice: ");
 		int day = input.nextInt();
+		
 		
 		
 		
