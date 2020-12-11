@@ -66,7 +66,7 @@ public class monthgenerator {
 		
 		if(leap(year) && month == 2) {
 			print_month(30, day);
-		}else {
+		}else if (month == 2){
 			print_month(29, day);
 		}
 		
@@ -87,17 +87,22 @@ public class monthgenerator {
 	}
 	
 	public static void print_month(int total_days, int day) {
-		int week_row = 0, day_ctr = 1, week_ctr = 1;
+		int week_row = 1, day_ctr = 1, week_ctr = 1, j = 1;
 		
 		for(int i = 0; i<week_row; i++) {
-			while(day_ctr != total_days+day) {
-				if(day_ctr<10) {
-					System.out.print("0"+day_ctr+"    ");
+			while(j != total_days+day) {
+				if(j<day) {
+					System.out.print("      ");
 				}else {
-					System.out.print(day_ctr+"     ");
+					if(day_ctr<10) {
+						System.out.print("0"+day_ctr+"    ");
+					}else {
+						System.out.print(day_ctr+"    ");
+					}
+					day_ctr++;
 				}
 				
-				day_ctr++;
+				j++;
 				week_ctr++;
 				
 				if(week_ctr == 8) {
@@ -106,6 +111,11 @@ public class monthgenerator {
 				}
 			}
 			System.out.println();
+			if(week_ctr != 8){
+				break;
+			}else {
+				week_ctr = 1;
+			}
 		}
 	}
 	
