@@ -5,6 +5,8 @@ public class monthgenerator {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int month = 0, day  = 0, year = 0;
+		String[] month_2 = {"JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", 
+							"JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"};
 		
 		System.out.println("MONTH GENERATOR");
 		System.out.println("---------------");
@@ -61,6 +63,7 @@ public class monthgenerator {
 			}
 		}
 		
+		System.out.println(month_2[month-1]+", "+year);
 		System.out.println("SU    MO    TU    WE    TH    FR    SA");
 		System.out.println("--------------------------------------");
 		
